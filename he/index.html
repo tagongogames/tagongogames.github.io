@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Tagongo Games</title>
+<meta name="description" content="Tagongo Games: המשחקים שלנו לאנדרואיד במקום אחד, עם קישורים ל-Google Play.">
+<link rel="canonical" href="https://tagongo.com/he/">
+<link rel="alternate" hreflang="en" href="https://tagongo.com/"><link rel="alternate" hreflang="he" href="https://tagongo.com/he/"><link rel="alternate" hreflang="es" href="https://tagongo.com/es/"><link rel="alternate" hreflang="pt" href="https://tagongo.com/pt/"><link rel="alternate" hreflang="fr" href="https://tagongo.com/fr/"><link rel="alternate" hreflang="de" href="https://tagongo.com/de/"><link rel="alternate" hreflang="it" href="https://tagongo.com/it/"><link rel="alternate" hreflang="ko" href="https://tagongo.com/ko/"><link rel="alternate" hreflang="ja" href="https://tagongo.com/ja/"><link rel="alternate" hreflang="x-default" href="https://tagongo.com/">
+<meta property="og:title" content="Tagongo Games"><meta property="og:description" content="Tagongo Games: המשחקים שלנו לאנדרואיד במקום אחד, עם קישורים ל-Google Play.">
+<meta property="og:image" content="https://tagongo.com/img/og.jpg"><meta property="og:type" content="website"><meta property="og:locale" content="he">
+<meta name="theme-color" content="#0a1020" media="(prefers-color-scheme: dark)"><meta name="theme-color" content="#eef7fb" media="(prefers-color-scheme: light)">
+<link rel="icon" href="/favicon.png" type="image/png"><link rel="apple-touch-icon" href="/img/icono-192.png">
+<link rel="preload" as="image" href="/img/logo.webp" imagesrcset="/img/logo.webp 640w, /img/logo-960.webp 960w, /img/logo@2x.webp 1280w" imagesizes="(max-width:600px) 88vw, 520px" fetchpriority="high">
+<link rel="preload" href="/fonts/rubik-hebrew.woff2" as="font" type="font/woff2" crossorigin>
+<script>try{var a=JSON.parse(localStorage.getItem("tg-a11y")||"{}");for(var k in a)if(a[k])document.documentElement.classList.add("a11y-"+k)}catch(e){}</script>
+<style>
+@font-face{font-family:"Fredoka";src:url(/fonts/fredoka.woff2) format("woff2");font-weight:300 700;font-display:swap}
+@font-face{font-family:"Fredoka";src:url(/fonts/fredoka-hebrew.woff2) format("woff2");font-weight:300 700;font-display:swap;unicode-range:U+0590-05FF,U+200C-2010,U+20AA,U+25CC,U+FB1D-FB4F}
+@font-face{font-family:"Nunito";src:url(/fonts/nunito.woff2) format("woff2");font-weight:200 1000;font-display:swap}
+@font-face{font-family:"Rubik";src:url(/fonts/rubik-hebrew.woff2) format("woff2");font-weight:300 800;font-display:swap;unicode-range:U+0590-05FF,U+200C-2010,U+20AA,U+25CC,U+FB1D-FB4F}
+:root{--bg:#eef7fb;--bg2:#dff0f7;--card:#fff;--ink:#12213a;--muted:#43536b;--line:#b9d3df;--acc:#06728a;--acc-bg:#067a96;--on-acc:#fff;
+ --gold:#8a6100;--glow:rgba(10,143,176,.22);--shadow:0 10px 30px rgba(18,33,58,.10);--focus:#b3261e;color-scheme:light;
+ --fs:1.0625rem;--body:"Nunito","Rubik",system-ui,-apple-system,"Segoe UI",sans-serif;--head:"Fredoka","Rubik","Nunito",system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root{--bg:#0a1020;--bg2:#0f1a33;--card:#121d38;--ink:#eaf6ff;--muted:#a9bbd6;--line:#2a3d63;--acc:#5ee7ff;
+ --acc-bg:#35e0ff;--on-acc:#06121f;--gold:#f7c24a;--glow:rgba(53,224,255,.26);--shadow:0 12px 34px rgba(0,0,0,.45);--focus:#ffd24a;color-scheme:dark}}
+html.a11y-contraste{--bg:#000;--bg2:#000;--card:#000;--ink:#fff;--muted:#fff;--line:#fff;--acc:#ffe100;--acc-bg:#ffe100;--on-acc:#000;--gold:#ffe100;--glow:transparent;--focus:#00e5ff;color-scheme:dark}
+html.a11y-texto{font-size:125%}
+html.a11y-enlaces a{text-decoration:underline!important;text-underline-offset:3px}
+html.a11y-quieto *,html.a11y-quieto *::before,html.a11y-quieto *::after{animation:none!important;transition:none!important}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 var(--fs)/1.6 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+[dir=rtl] body{font-family:"Rubik","Nunito",system-ui,sans-serif}
+html[lang=ja]{--body:"Nunito","Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic UI","Meiryo","Noto Sans JP","Noto Sans CJK JP",system-ui,sans-serif;--head:"Fredoka","Hiragino Sans","Yu Gothic UI","Meiryo","Noto Sans JP","Noto Sans CJK JP",system-ui,sans-serif}
+html[lang=ko]{--body:"Nunito","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR",system-ui,sans-serif;--head:"Fredoka","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR",system-ui,sans-serif}
+html[lang=ko] body{word-break:keep-all}html[lang=ja] body{line-break:strict}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--acc)}
+:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1120px;margin-inline:auto;padding-inline:max(16px,env(safe-area-inset-left)) max(16px,env(safe-area-inset-right))}
+h1,h2,h3{font-family:var(--head);line-height:1.15;text-wrap:balance;margin:0}
+.saltar{position:absolute;inset-inline-start:12px;top:-100px;z-index:50;background:var(--card);color:var(--ink);padding:12px 16px;border-radius:12px;border:2px solid var(--acc)}
+.saltar:focus{top:calc(8px + env(safe-area-inset-top))}
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* barra superior */
+.barra{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top)}
+.barra .wrap{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:56px}
+.marca{display:flex;align-items:center;gap:8px;color:var(--ink);text-decoration:none;font:600 1.05rem var(--head);min-height:44px}
+.marca img{width:34px;height:34px;border-radius:10px}
+.acciones{display:flex;gap:6px;align-items:center}
+.boton-icono{display:inline-flex;align-items:center;gap:6px;min-height:44px;min-width:44px;padding:0 12px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);font:600 .95rem var(--head);cursor:pointer}
+.boton-icono svg{width:20px;height:20px;flex:none}
+.menu{position:relative}
+.menu>[role=menu],.menu .panel{position:absolute;inset-inline-end:0;top:calc(100% + 6px);background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:6px;min-width:210px;z-index:30}
+.menu a,.menu .op{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:44px;padding:8px 12px;border-radius:10px;color:var(--ink);text-decoration:none;width:100%;background:none;border:0;font:inherit;cursor:pointer;text-align:start}
+.menu a:hover,.menu .op:hover,.menu a:focus-visible,.menu .op:focus-visible{background:var(--bg2)}
+.menu a[aria-current=true]{font-weight:700}
+.op[aria-pressed=true]::after{content:"✓";color:var(--acc);font-weight:700}
+@media (max-width:420px){.boton-icono .etq{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}}
+/* héroe */
+.hero{position:relative;overflow:hidden;padding-block:28px 44px;text-align:center;background:radial-gradient(900px 420px at 50% -10%,var(--glow),transparent 70%),linear-gradient(180deg,var(--bg2),var(--bg))}
+.hero .wrap{position:relative;display:grid;justify-items:center;gap:16px}
+.hex{position:absolute;inset:0;width:100%;height:100%;opacity:.5;pointer-events:none}
+.logo-caja{position:relative;width:min(520px,88vw);aspect-ratio:1280/898;animation:flotar 6s ease-in-out infinite}
+.logo-caja img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 16px 30px var(--glow))}
+.logo-caja .capa{opacity:0;transition:opacity .07s linear;filter:none}
+.logo-caja.guina .guino,.logo-caja.parpadea .parpadeo{opacity:1}
+@keyframes flotar{50%{transform:translateY(-8px)}}
+.textos-hero{display:grid;justify-items:center;gap:16px}
+.iconos{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin:4px 0 0;padding:0;list-style:none}
+.iconos a{display:block;border-radius:14px;transition:transform .15s}
+.iconos a:hover{transform:translateY(-3px)}
+.iconos img{width:clamp(44px,12.4vw,52px);height:auto;aspect-ratio:1;border-radius:13px;box-shadow:0 6px 16px rgba(0,0,0,.28)}
+@media (min-width:1000px){.hero .wrap{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);align-items:center;text-align:start;gap:40px}
+ .logo-caja{width:min(500px,100%)}.textos-hero{justify-items:start}.cta,.iconos{justify-content:flex-start}.lema{font-size:1.9rem}}
+
+.lema{font:500 clamp(1.2rem,4.6vw,1.6rem)/1.35 var(--head);max-width:34ch;margin:0}
+.cta{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:10px 22px;border-radius:999px;font:600 1rem var(--head);text-decoration:none;border:2px solid var(--acc-bg);color:var(--ink);background:transparent}
+.btn.primario{background:var(--acc-bg);color:var(--on-acc);box-shadow:0 8px 22px var(--glow)}
+.btn svg{width:18px;height:18px;flex:none}
+.pausa{position:absolute;inset-inline-end:max(12px,env(safe-area-inset-right));top:12px;min-height:44px;opacity:.85}
+/* juegos */
+section{padding-block:40px}
+.cabeza{display:grid;gap:6px;margin-bottom:20px}
+.cabeza h2{font-size:clamp(1.7rem,6vw,2.4rem)}
+.cabeza h2 span{color:var(--gold)}
+.cabeza p{margin:0;color:var(--muted)}
+.grilla{display:grid;grid-template-columns:1fr;gap:18px;align-items:stretch}
+@media (min-width:700px){.grilla{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1040px){.grilla{grid-template-columns:repeat(3,1fr)}}
+.juego{scroll-margin-top:72px;background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.galeria{position:relative;isolation:isolate;overflow:hidden;padding:16px}
+.galeria .fondo{position:absolute;inset:-40px;z-index:-1;background:var(--fondo) center/cover;filter:blur(34px) saturate(1.35) brightness(.55);transform:scale(1.15)}
+.galeria::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(6,10,20,.15),rgba(6,10,20,.45))}
+.fotos{display:grid;grid-template-columns:1.18fr 1fr;gap:10px;align-items:start}
+.fotos button{position:relative;display:block;width:100%;padding:0;border:0;background:none;border-radius:14px;cursor:zoom-in;overflow:hidden;
+ box-shadow:0 10px 24px rgba(0,0,0,.38);transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s}
+.fotos button:hover,.fotos button:focus-visible{transform:translateY(-3px) scale(1.02);box-shadow:0 16px 34px rgba(0,0,0,.5)}
+.fotos button:active{transform:scale(.98)}
+.fotos img{width:100%;height:auto;aspect-ratio:var(--ar);object-fit:cover;background:#0a1020}
+.fotos .mini{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.fotos .mas{position:absolute;inset:0;display:grid;place-items:center;background:rgba(6,10,20,.62);color:#fff;font:700 1.35rem var(--head);backdrop-filter:blur(2px)}
+.juego:hover .galeria .fondo{transform:scale(1.2)}
+.galeria .fondo{transition:transform 1.2s ease}
+@media (prefers-reduced-motion:reduce){.fotos button,.galeria .fondo{transition:none}.fotos button:hover{transform:none}}
+.info{display:grid;grid-template-columns:64px 1fr;grid-template-rows:1fr auto;gap:12px 14px;padding:14px 16px 18px;align-items:start;flex:1}
+.info>img{width:64px;height:64px;border-radius:16px;box-shadow:0 4px 12px rgba(0,0,0,.18)}
+.info h3{font-size:1.25rem;margin-bottom:2px}
+.info p{margin:0;color:var(--muted)}
+.info .btn{grid-column:1/-1;width:100%;align-self:end}
+@media (min-width:700px){.info .btn{width:auto;justify-self:start}}
+footer{padding-block:32px calc(28px + env(safe-area-inset-bottom));text-align:center;color:var(--muted);border-top:1px solid var(--line)}
+footer nav ul{list-style:none;margin:0 0 10px;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:4px 8px}
+footer nav a,footer nav .enlace{display:inline-flex;align-items:center;min-height:44px;padding:0 10px;color:var(--ink)}
+footer nav .enlace{background:none;border:0;font:inherit;text-decoration:underline;cursor:pointer}
+/* aviso de cookies (30/09): Aceptar y Rechazar con el mismo peso; nada se carga sin aceptar */
+.cookies{position:fixed;z-index:40;inset-inline:max(12px,env(safe-area-inset-left)) max(12px,env(safe-area-inset-right));bottom:calc(12px + env(safe-area-inset-bottom));max-width:560px;margin-inline:auto;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:16px 18px}
+.cookies[hidden]{display:none}
+.cookies p{margin:0 0 12px;font-size:.95rem;line-height:1.5}
+.cookies .botones{display:flex;flex-wrap:wrap;gap:10px}
+.cookies button{flex:1 1 120px;min-height:44px;padding:8px 16px;border-radius:12px;border:2px solid var(--acc);background:var(--card);color:var(--ink);font:700 1rem var(--body);cursor:pointer}
+/* declaración */
+.doc{max-width:70ch;padding-block:32px 48px}
+.doc h1{font-size:clamp(1.7rem,6vw,2.3rem);margin-bottom:18px}
+.doc h2{font-size:1.25rem;margin:26px 0 6px}
+.doc p{margin:0;overflow-wrap:anywhere}
+/* visor */
+dialog.visor{border:0;padding:0;margin:0;width:100vw;height:100dvh;max-width:none;max-height:none;background:transparent;color:#fff;overflow:hidden}
+dialog.visor::backdrop{background:rgba(4,8,18,.9)}
+.visor .fondo-visor{position:absolute;inset:-60px;background:var(--fondo) center/cover;filter:blur(44px) saturate(1.3) brightness(.42);transform:scale(1.15);transition:background-image .3s}
+.visor .foto.suave{transition:transform .22s ease-out}
+.visor .escena{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:calc(64px + env(safe-area-inset-top)) 12px calc(76px + env(safe-area-inset-bottom));touch-action:none}
+.visor .foto{max-width:100%;max-height:100%;min-height:0;width:auto;height:auto;object-fit:contain;border-radius:14px;box-shadow:0 20px 60px rgba(0,0,0,.6);transform-origin:center;will-change:transform;background:#0a1020 center/contain no-repeat}
+.visor .arriba{position:absolute;top:env(safe-area-inset-top);inset-inline:0;display:flex;justify-content:space-between;align-items:center;padding:10px 12px;gap:8px}
+.visor .titulo{font:600 1rem "Fredoka","Rubik",sans-serif;opacity:.95;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.visor .abajo{position:absolute;bottom:env(safe-area-inset-bottom);inset-inline:0;display:flex;justify-content:center;align-items:center;gap:16px;padding:12px}
+.visor button{min-width:48px;min-height:48px;border-radius:999px;border:1px solid rgba(255,255,255,.35);background:rgba(10,16,32,.7);color:#fff;display:inline-grid;place-items:center;cursor:pointer}
+.visor button svg{width:22px;height:22px}
+[dir=rtl] .visor .flecha svg{transform:scaleX(-1)}
+.visor .zoom{display:flex;gap:8px}
+.visor .contador{font:600 1rem "Nunito","Rubik",sans-serif;min-width:5ch;text-align:center;font-variant-numeric:tabular-nums}
+@media (prefers-reduced-motion:reduce){.logo-caja{animation:none}}
+</style>
+</head>
+<body>
+<a class="saltar" href="#contenido">דילוג לתוכן</a>
+<header class="barra"><div class="wrap">
+ <a class="marca" href="/he/"><img src="/img/marca.webp" width="34" height="34" alt="">Tagongo Games</a>
+ <div class="acciones">
+  <div class="menu" id="m-idioma">
+   <button class="boton-icono" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="lista-idiomas"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm6.9 6h-3a15.7 15.7 0 0 0-1.4-4.1A8 8 0 0 1 18.9 8ZM12 4.1c.8 1.2 1.5 2.5 1.9 3.9h-3.8c.4-1.4 1.1-2.7 1.9-3.9ZM4.3 14a8.2 8.2 0 0 1 0-4h3.4a16.5 16.5 0 0 0 0 4H4.3Zm.8 2h3c.3 1.4.8 2.8 1.4 4.1A8 8 0 0 1 5.1 16Zm3-8h-3a8 8 0 0 1 4.4-4.1C8.9 5.2 8.4 6.6 8.1 8ZM12 19.9c-.8-1.2-1.5-2.5-1.9-3.9h3.8c-.4 1.4-1.1 2.7-1.9 3.9Zm2.3-5.9H9.7a14.7 14.7 0 0 1 0-4h4.6a14.7 14.7 0 0 1 0 4Zm.2 6.1c.6-1.3 1.1-2.7 1.4-4.1h3a8 8 0 0 1-4.4 4.1Zm1.8-6.1a16.5 16.5 0 0 0 0-4h3.4a8.2 8.2 0 0 1 0 4h-3.4Z"/></svg><span class="etq">עברית</span><span class="sr"> — שפה</span></button>
+   <ul role="list" class="panel" id="lista-idiomas" hidden style="list-style:none;margin:0">
+    <li><a href="/" hreflang="en" lang="en" data-lang="en">English</a></li><li><a href="/he/" hreflang="he" lang="he" data-lang="he" aria-current=true>עברית</a></li><li><a href="/es/" hreflang="es" lang="es" data-lang="es">Español</a></li><li><a href="/pt/" hreflang="pt" lang="pt" data-lang="pt">Português</a></li><li><a href="/fr/" hreflang="fr" lang="fr" data-lang="fr">Français</a></li><li><a href="/de/" hreflang="de" lang="de" data-lang="de">Deutsch</a></li><li><a href="/it/" hreflang="it" lang="it" data-lang="it">Italiano</a></li><li><a href="/ko/" hreflang="ko" lang="ko" data-lang="ko">한국어</a></li><li><a href="/ja/" hreflang="ja" lang="ja" data-lang="ja">日本語</a></li>
+   </ul>
+  </div>
+  <div class="menu" id="m-a11y">
+   <button class="boton-icono" type="button" aria-expanded="false" aria-controls="panel-a11y"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4Zm8 6.5-5 1V22h-2v-6h-2v6H9V9.5l-5-1 .4-2L10 7.6h4l5.6-1.1.4 2Z"/></svg><span class="etq">נגישות</span></button>
+   <div class="panel" id="panel-a11y" hidden role="group" aria-label="נגישות">
+    <button class="op" type="button" data-a11y="texto" aria-pressed="false">הגדלת טקסט</button>
+    <button class="op" type="button" data-a11y="contraste" aria-pressed="false">ניגודיות גבוהה</button>
+    <button class="op" type="button" data-a11y="enlaces" aria-pressed="false">הדגשת קישורים</button>
+    <button class="op" type="button" data-a11y="quieto" aria-pressed="false">עצירת אנימציות</button>
+    <button class="op" type="button" data-a11y="reiniciar">איפוס</button>
+    <a href="/he/accessibility">הצהרת נגישות</a>
+   </div>
+  </div>
+ </div>
+</div></header>
+
+<main id="contenido" tabindex="-1">
+<section class="hero" aria-labelledby="titulo-sitio" style="padding-top:28px">
+ <svg class="hex" aria-hidden="true" focusable="false"><defs><pattern id="h" width="56" height="97" patternUnits="userSpaceOnUse"><path d="M28 1 L55 17 L55 48 L28 64 L1 48 L1 17 Z M28 64 L28 97" fill="none" stroke="currentColor" stroke-opacity=".16" stroke-width="1.2"/></pattern><radialGradient id="f" cx="50%" cy="35%" r="65%"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient><mask id="m"><rect width="100%" height="100%" fill="url(#f)"/></mask></defs><rect width="100%" height="100%" fill="url(#h)" mask="url(#m)" style="color:var(--acc)"/></svg>
+ <div class="wrap">
+  <h1 id="titulo-sitio" class="sr">Tagongo Games</h1>
+  <div class="logo-caja" role="img" aria-label="הלוגו של Tagongo Games: קפיברה עם אוזניות גיימינג">
+   <img src="/img/logo.webp" srcset="/img/logo.webp 640w, /img/logo-960.webp 960w, /img/logo@2x.webp 1280w" sizes="(max-width:600px) 88vw, 520px" width="640" height="449" alt="" fetchpriority="high">
+   <img class="capa guino" src="/img/guino.webp" width="1280" height="898" alt="" loading="lazy">
+   <img class="capa parpadeo" src="/img/parpadeo.webp" width="1280" height="898" alt="" loading="lazy">
+  </div>
+  <div class="textos-hero">
+   <p class="lema">המשחקים שלנו לאנדרואיד, כולם במקום אחד.</p>
+   <div class="cta"><a class="btn primario" href="#juegos">למשחקים שלנו</a>
+    <a class="btn" href="https://play.google.com/store/apps/developer?id=Tagongo+Games" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M4 2.8v18.4c0 .5.5.8.9.6l16-9.2a.7.7 0 0 0 0-1.2L4.9 2.2c-.4-.2-.9.1-.9.6Z"/></svg>Google Play</a></div>
+   <ul class="iconos" aria-label="המשחקים שלנו"><li><a href="#g-paintwake"><img src="/juegos/paintwake/icono-128.webp" width="52" height="52" alt="Paintwake" loading="lazy"></a></li><li><a href="#g-phaseline"><img src="/juegos/phaseline/icono-128.webp" width="52" height="52" alt="PHASELINE" loading="lazy"></a></li><li><a href="#g-floravia"><img src="/juegos/floravia/icono-128.webp" width="52" height="52" alt="FLORAVIA" loading="lazy"></a></li><li><a href="#g-pipohd"><img src="/juegos/pipohd/icono-128.webp" width="52" height="52" alt="PIPO HD" loading="lazy"></a></li><li><a href="#g-platformerpremium"><img src="/juegos/platformerpremium/icono-128.webp" width="52" height="52" alt="Platformer Premium" loading="lazy"></a></li><li><a href="#g-ecohd"><img src="/juegos/ecohd/icono-128.webp" width="52" height="52" alt="ECO" loading="lazy"></a></li><li><a href="#g-twyn"><img src="/juegos/twyn/icono-128.webp" width="52" height="52" alt="TWYN" loading="lazy"></a></li></ul>
+  </div>
+ </div>
+ <button class="boton-icono pausa" id="pausa-anim" type="button" aria-pressed="false" data-off="עצירת אנימציות" data-on="הפעלת אנימציות"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M7 5h4v14H7V5Zm6 0h4v14h-4V5Z"/></svg><span class="sr">עצירת אנימציות</span></button>
+</section>
+<section id="juegos" aria-labelledby="t-juegos"><div class="wrap">
+ <div class="cabeza"><h2 id="t-juegos">המשחקים שלנו</h2><p>הקישו על צילום מסך כדי לראות אותו בגדול.</p></div>
+ <div class="grilla"><article class="juego" id="g-paintwake" data-juego="Paintwake" data-capturas="[{&quot;t&quot;: &quot;/juegos/paintwake/c0-m.webp&quot;, &quot;f&quot;: &quot;/juegos/paintwake/c0.webp&quot;, &quot;alt&quot;: &quot;Paintwake, צילום מסך 1 מתוך 8&quot;}, {&quot;t&quot;: &quot;/juegos/paintwake/c1-m.webp&quot;, &quot;f&quot;: &quot;/juegos/paintwake/c1.webp&quot;, &quot;alt&quot;: &quot;Paintwake, צילום מסך 2 מתוך 8&quot;}, {&quot;t&quot;: &quot;/juegos/paintwake/c2-m.webp&quot;, &quot;f&quot;: &quot;/juegos/paintwake/c2.webp&quot;, &quot;alt&quot;: &quot;Paintwake, צילום מסך 3 מתוך 8&quot;}, {&quot;t&quot;: &quot;/juegos/paintwake/c3-m.webp&quot;, &quot;f&quot;: &quot;/juegos/paintwake/c3.webp&quot;, &quot;alt&quot;: &quot;Paintwake, צילום מסך 4 מתוך 8&quot;}, {&quot;t&quot;: &quot;/juegos/paintwake/c4-m.webp&quot;, &quot;f&quot;: &quot;/juegos/paintwake/c4.webp&quot;, &quot;alt&quot;: &quot;Paintwake, צילום מסך 5 מתוך 8&quot;}, {&quot;t&quot;: &quot;/juegos/paintwake/c5-m.webp&quot;, &quot;f&quot;: &quot;/juegos/paintwake/c5.webp&quot;, &quot;alt&quot;: &quot;Paintwake, צילום מסך 6 מתוך 8&quot;}, {&quot;t&quot;: &quot;/juegos/paintwake/c6-m.webp&quot;, &quot;f&quot;: &quot;/juegos/paintwake/c6.webp&quot;, &quot;alt&quot;: &quot;Paintwake, צילום מסך 7 מתוך 8&quot;}, {&quot;t&quot;: &quot;/juegos/paintwake/c7-m.webp&quot;, &quot;f&quot;: &quot;/juegos/paintwake/c7.webp&quot;, &quot;alt&quot;: &quot;Paintwake, צילום מסך 8 מתוך 8&quot;}]" aria-labelledby="t-paintwake">
+ <div class="galeria"><div class="fondo" style="--fondo:url(/juegos/paintwake/c0-t.webp)" aria-hidden="true"></div><div class="fotos" style="--ar:1080/1920"><button type="button" data-i="0" aria-label="הצגת צילום מסך 1 של Paintwake בגודל מלא"><img src="/juegos/paintwake/c0-m.webp" srcset="/juegos/paintwake/c0-t.webp 240w, /juegos/paintwake/c0-m.webp 480w" sizes="(max-width:700px) 52vw, 220px" width="480" height="853" loading="eager" decoding="async" alt="Paintwake, צילום מסך 1 מתוך 8"></button><div class="mini"><button type="button" data-i="1" aria-label="הצגת צילום מסך 2 של Paintwake בגודל מלא"><img src="/juegos/paintwake/c1-t.webp" srcset="/juegos/paintwake/c1-t.webp 240w, /juegos/paintwake/c1-m.webp 480w" sizes="(max-width:700px) 22vw, 100px" width="240" height="427" loading="lazy" decoding="async" alt="Paintwake, צילום מסך 2 מתוך 8"></button><button type="button" data-i="2" aria-label="הצגת צילום מסך 3 של Paintwake בגודל מלא"><img src="/juegos/paintwake/c2-t.webp" srcset="/juegos/paintwake/c2-t.webp 240w, /juegos/paintwake/c2-m.webp 480w" sizes="(max-width:700px) 22vw, 100px" width="240" height="427" loading="lazy" decoding="async" alt="Paintwake, צילום מסך 3 מתוך 8"></button><button type="button" data-i="3" aria-label="הצגת צילום מסך 4 של Paintwake בגודל מלא"><img src="/juegos/paintwake/c3-t.webp" srcset="/juegos/paintwake/c3-t.webp 240w, /juegos/paintwake/c3-m.webp 480w" sizes="(max-width:700px) 22vw, 100px" width="240" height="427" loading="lazy" decoding="async" alt="Paintwake, צילום מסך 4 מתוך 8"></button><button type="button" data-i="4" aria-label="הצגת צילום מסך 5 של Paintwake בגודל מלא"><img src="/juegos/paintwake/c4-t.webp" srcset="/juegos/paintwake/c4-t.webp 240w, /juegos/paintwake/c4-m.webp 480w" sizes="(max-width:700px) 22vw, 100px" width="240" height="427" loading="lazy" decoding="async" alt="Paintwake, צילום מסך 5 מתוך 8"><span class="mas" aria-hidden="true">+3</span></button></div></div></div>
+ <div class="info"><img src="/juegos/paintwake/icono-128.webp" srcset="/juegos/paintwake/icono-128.webp 1x, /juegos/paintwake/icono.webp 2x" width="64" height="64" loading="lazy" alt="הסמל של Paintwake">
+  <div><h3 id="t-paintwake">Paintwake</h3><p>ציורי צבע לפי מספר שמתעוררים לחיים עם גשם, אור ותנועה.</p></div>
+  <a class="btn primario" href="https://play.google.com/store/apps/details?id=com.tagongogames.paintwake" target="_blank" rel="noopener" aria-label="Paintwake ב-Google Play (נפתח בלשונית חדשה)"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M4 2.8v18.4c0 .5.5.8.9.6l16-9.2a.7.7 0 0 0 0-1.2L4.9 2.2c-.4-.2-.9.1-.9.6Z"/></svg>להורדה ב-Google Play</a>
+ </div>
+</article><article class="juego" id="g-phaseline" data-juego="PHASELINE" data-capturas="[{&quot;t&quot;: &quot;/juegos/phaseline/c0-m.webp&quot;, &quot;f&quot;: &quot;/juegos/phaseline/c0.webp&quot;, &quot;alt&quot;: &quot;PHASELINE, צילום מסך 1 מתוך 5&quot;}, {&quot;t&quot;: &quot;/juegos/phaseline/c1-m.webp&quot;, &quot;f&quot;: &quot;/juegos/phaseline/c1.webp&quot;, &quot;alt&quot;: &quot;PHASELINE, צילום מסך 2 מתוך 5&quot;}, {&quot;t&quot;: &quot;/juegos/phaseline/c2-m.webp&quot;, &quot;f&quot;: &quot;/juegos/phaseline/c2.webp&quot;, &quot;alt&quot;: &quot;PHASELINE, צילום מסך 3 מתוך 5&quot;}, {&quot;t&quot;: &quot;/juegos/phaseline/c3-m.webp&quot;, &quot;f&quot;: &quot;/juegos/phaseline/c3.webp&quot;, &quot;alt&quot;: &quot;PHASELINE, צילום מסך 4 מתוך 5&quot;}, {&quot;t&quot;: &quot;/juegos/phaseline/c4-m.webp&quot;, &quot;f&quot;: &quot;/juegos/phaseline/c4.webp&quot;, &quot;alt&quot;: &quot;PHASELINE, צילום מסך 5 מתוך 5&quot;}]" aria-labelledby="t-phaseline">
+ <div class="galeria"><div class="fondo" style="--fondo:url(/juegos/phaseline/c0-t.webp)" aria-hidden="true"></div><div class="fotos" style="--ar:1080/2220"><button type="button" data-i="0" aria-label="הצגת צילום מסך 1 של PHASELINE בגודל מלא"><img src="/juegos/phaseline/c0-m.webp" srcset="/juegos/phaseline/c0-t.webp 240w, /juegos/phaseline/c0-m.webp 480w" sizes="(max-width:700px) 52vw, 220px" width="480" height="987" loading="lazy" decoding="async" alt="PHASELINE, צילום מסך 1 מתוך 5"></button><div class="mini"><button type="button" data-i="1" aria-label="הצגת צילום מסך 2 של PHASELINE בגודל מלא"><img src="/juegos/phaseline/c1-t.webp" srcset="/juegos/phaseline/c1-t.webp 240w, /juegos/phaseline/c1-m.webp 480w" sizes="(max-width:700px) 22vw, 100px" width="240" height="493" loading="lazy" decoding="async" alt="PHASELINE, צילום מסך 2 מתוך 5"></button><button type="button" data-i="2" aria-label="הצגת צילום מסך 3 של PHASELINE בגודל מלא"><img src="/juegos/phaseline/c2-t.webp" srcset="/juegos/phaseline/c2-t.webp 240w, /juegos/phaseline/c2-m.webp 480w" sizes="(max-width:700px) 22vw, 100px" width="240" height="493" loading="lazy" decoding="async" alt="PHASELINE, צילום מסך 3 מתוך 5"></button><button type="button" data-i="3" aria-label="הצגת צילום מסך 4 של PHASELINE בגודל מלא"><img src="/juegos/phaseline/c3-t.webp" srcset="/juegos/phaseline/c3-t.webp 240w, /juegos/phaseline/c3-m.webp 480w" sizes="(max-width:700px) 22vw, 100px" width="240" height="493" loading="lazy" decoding="async" alt="PHASELINE, צילום מסך 4 מתוך 5"></button><button type="button" data-i="4" aria-label="הצגת צילום מסך 5 של PHASELINE בגודל מלא"><img src="/juegos/phaseline/c4-t.webp" srcset="/juegos/phaseline/c4-t.webp 240w, /juegos/phaseline/c4-m.webp 480w" sizes="(max-width:700px) 22vw, 100px" width="240" height="493" loading="lazy" decoding="async" alt="PHASELINE, צילום מסך 5 מתוך 5"></button></div></div></div>
+ <div class="info"><img src="/juegos/phaseline/icono-128.webp" srcset="/juegos/phaseline/icono-128.webp 1x, /juegos/phaseline/icono.webp 2x" width="64" height="64" loading="lazy" alt="הסמל של PHASELINE">
+  <div><h3 id="t-phaseline">PHASELINE</h3><p>הקישו כדי לדלג בין שתי מציאויות ולהתחמק מהסכנות. אצבע אחת, הקשה אחת.</p></div>
+  <a class="btn primario" href="https://play.google.com/store/apps/details?id=com.tagongogames.phaseline" target="_blank" rel="noopener" aria-label="PHASELINE ב-Google Play (נפתח בלשונית חדשה)"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M4 2.8v18.4c0 .5.5.8.9.6l16-9.2a.7.7 0 0 0 0-1.2L4.9 2.2c-.4-.2-.9.1-.9.6Z"/></svg>להורדה ב-Google Play</a>
+ </div>
+</article><article class="juego" id="g-floravia" data-juego="FLORAVIA" data-capturas="[{&quot;t&quot;: &quot;/juegos/floravia/c0-m.webp&quot;, &quot;f&quot;: &quot;/juegos/floravia/c0.webp&quot;, &quot;alt&quot;: &quot;FLORAVIA, צילום מסך 1 מתוך 5&quot;}, {&quot;t&quot;: &quot;/juegos/floravia/c1-m.webp&quot;, &quot;f&quot;: &quot;/juegos/floravia/c1.webp&quot;, &quot;alt&quot;: &quot;FLORAVIA, צילום מסך 2 מתוך 5&quot;}, {&quot;t&quot;: &quot;/juegos/floravia/c2-m.webp&quot;, &quot;f&quot;: &quot;/juegos/floravia/c2.webp&quot;, &quot;alt&quot;: &quot;FLORAVIA, צילום מסך 3 מתוך 5&quot;}, {&quot;t&quot;: &quot;/juegos/floravia/c3-m.webp&quot;, &quot;f&quot;: &quot;/juegos/floravia/c3.webp&quot;, &quot;alt&quot;: &quot;FLORAVIA, צילום מסך 4 מתוך 5&quot;}, {&quot;t&quot;: &quot;/juegos/floravia/c4-m.webp&quot;, &quot;f&quot;: &quot;/juegos/floravia/c4.webp&quot;, &quot;alt&quot;: &quot;FLORAVIA, צילום מסך 5 מתוך 5&quot;}]" aria-labelledby="t-floravia">
+ <div class="galeria"><div class="fondo" style="--fondo:url(/juegos/floravia/c0-t.webp)" aria-hidden="true"></div><div class="fotos" style="--ar:1080/2220"><button type="button" data-i="0" aria-label="הצגת צילום מסך 1 של FLORAVIA בגודל מלא"><img src="/juegos/floravia/c0-m.webp" srcset="/juegos/floravia/c0-t.webp 240w, /juegos/floravia/c0-m.webp 480w" sizes="(max-width:700px) 52vw, 220px" width="480" height="987" loading="lazy" decoding="async" alt="FLORAVIA, צילום מסך 1 מתוך 5"></button><div class="mini"><button type="button" data-i="1" aria-label="הצגת צילום מסך 2 של FLORAVIA בגודל מלא"><img src="/juegos/floravia/c1-t.webp" srcset="/juegos/floravia/c1-t.webp 240w, /juegos/floravia/c1-m.webp 480w" sizes="(max-width:700px) 22vw, 100px" width="240" height="493" loading="lazy" decoding="async" alt="FLORAVIA, צילום מסך 2 מתוך 5"></button><button type="button" data-i="2" aria-label="הצגת צילום מסך 3 של FLORAVIA בגודל מלא"><img src="/juegos/floravia/c2-t.webp" srcset="/juegos/floravia/c2-t.webp 240w, /juegos/floravia/c2-m.webp 480w" sizes="(max-width:700px) 22vw, 100px" width="240" height="493" loading="lazy" decoding="async" alt="FLORAVIA, צילום מסך 3 מתוך 5"></button><button type="button" data-i="3" aria-label="הצגת צילום מסך 4 של FLORAVIA בגודל מלא"><img src="/juegos/floravia/c3-t.webp" srcset="/juegos/floravia/c3-t.webp 240w, /juegos/floravia/c3-m.webp 480w" sizes="(max-width:700px) 22vw, 100px" width="240" height="493" loading="lazy" decoding="async" alt="FLORAVIA, צילום מסך 4 מתוך 5"></button><button type="button" data-i="4" aria-label="הצגת צילום מסך 5 של FLORAVIA בגודל מלא"><img src="/juegos/floravia/c4-t.webp" srcset="/juegos/floravia/c4-t.webp 240w, /juegos/floravia/c4-m.webp 480w" sizes="(max-width:700px) 22vw, 100px" width="240" height="493" loading="lazy" decoding="async" alt="FLORAVIA, צילום מסך 5 מתוך 5"></button></div></div></div>
+ <div class="info"><img src="/juegos/floravia/icono-128.webp" srcset="/juegos/floravia/icono-128.webp 1x, /juegos/floravia/icono.webp 2x" width="64" height="64" loading="lazy" alt="הסמל של FLORAVIA">
+  <div><h3 id="t-floravia">FLORAVIA</h3><p>חיברו פרחים על גבי חלת דבש משושה והחזירו את הגינה לפריחה.</p></div>
+  <a class="btn primario" href="https://play.google.com/store/apps/details?id=com.tagongogames.floravia" target="_blank" rel="noopener" aria-label="FLORAVIA ב-Google Play (נפתח בלשונית חדשה)"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M4 2.8v18.4c0 .5.5.8.9.6l16-9.2a.7.7 0 0 0 0-1.2L4.9 2.2c-.4-.2-.9.1-.9.6Z"/></svg>להורדה ב-Google Play</a>
+ </div>
+</article><article class="juego" id="g-pipohd" data-juego="PIPO HD" data-capturas="[{&quot;t&quot;: &quot;/juegos/pipohd/c0-m.webp&quot;, &quot;f&quot;: &quot;/juegos/pipohd/c0.webp&quot;, &quot;alt&quot;: &quot;PIPO HD, צילום מסך 1 מתוך 5&quot;}, {&quot;t&quot;: &quot;/juegos/pipohd/c1-m.webp&quot;, &quot;f&quot;: &quot;/juegos/pipohd/c1.webp&quot;, &quot;alt&quot;: &quot;PIPO HD, צילום מסך 2 מתוך 5&quot;}, {&quot;t&quot;: &quot;/juegos/pipohd/c2-m.webp&quot;, &quot;f&quot;: &quot;/juegos/pipohd/c2.webp&quot;, &quot;alt&quot;: &quot;PIPO HD, צילום מסך 3 מתוך 5&quot;}, {&quot;t&quot;: &quot;/juegos/pipohd/c3-m.webp&quot;, &quot;f&quot;: &quot;/juegos/pipohd/c3.webp&quot;, &quot;alt&quot;: &quot;PIPO HD, צילום מסך 4 מתוך 5&quot;}, {&quot;t&quot;: &quot;/juegos/pipohd/c4-m.webp&quot;, &quot;f&quot;: &quot;/juegos/pipohd/c4.webp&quot;, &quot;alt&quot;: &quot;PIPO HD, צילום מסך 5 מתוך 5&quot;}]" aria-labelledby="t-pipohd">
+ <div class="galeria"><div class="fondo" style="--fondo:url(/juegos/pipohd/c0-t.webp)" aria-hidden="true"></div><div class="fotos" style="--ar:1080/2220"><button type="button" data-i="0" aria-label="הצגת צילום מסך 1 של PIPO HD בגודל מלא"><img src="/juegos/pipohd/c0-m.webp" srcset="/juegos/pipohd/c0-t.webp 240w, /juegos/pipohd/c0-m.webp 480w" sizes="(max-width:700px) 52vw, 220px" width="480" height="987" loading="lazy" decoding="async" alt="PIPO HD, צילום מסך 1 מתוך 5"></button><div class="mini"><button type="button" data-i="1" aria-label="הצגת צילום מסך 2 של PIPO HD בגודל מלא"><img src="/juegos/pipohd/c1-t.webp" srcset="/juegos/pipohd/c1-t.webp 240w, /juegos/pipohd/c1-m.webp 480w" sizes="(max-width:700px) 22vw, 100px" width="240" height="493" loading="lazy" decoding="async" alt="PIPO HD, צילום מסך 2 מתוך 5"></button><button type="button" data-i="2" aria-label="הצגת צילום מסך 3 של PIPO HD בגודל מלא"><img src="/juegos/pipohd/c2-t.webp" srcset="/juegos/pipohd/c2-t.webp 240w, /juegos/pipohd/c2-m.webp 480w" sizes="(max-width:700px) 22vw, 100px" width="240" height="493" loading="lazy" decoding="async" alt="PIPO HD, צילום מסך 3 מתוך 5"></button><button type="button" data-i="3" aria-label="הצגת צילום מסך 4 של PIPO HD בגודל מלא"><img src="/juegos/pipohd/c3-t.webp" srcset="/juegos/pipohd/c3-t.webp 240w, /juegos/pipohd/c3-m.webp 480w" sizes="(max-width:700px) 22vw, 100px" width="240" height="493" loading="lazy" decoding="async" alt="PIPO HD, צילום מסך 4 מתוך 5"></button><button type="button" data-i="4" aria-label="הצגת צילום מסך 5 של PIPO HD בגודל מלא"><img src="/juegos/pipohd/c4-t.webp" srcset="/juegos/pipohd/c4-t.webp 240w, /juegos/pipohd/c4-m.webp 480w" sizes="(max-width:700px) 22vw, 100px" width="240" height="493" loading="lazy" decoding="async" alt="PIPO HD, צילום מסך 5 מתוך 5"></button></div></div></div>
+ <div class="info"><img src="/juegos/pipohd/icono-128.webp" srcset="/juegos/pipohd/icono-128.webp 1x, /juegos/pipohd/icono.webp 2x" width="64" height="64" loading="lazy" alt="הסמל של PIPO HD">
+  <div><h3 id="t-pipohd">PIPO HD</h3><p>פיפו רץ לבד. אתם רק מחליטים מתי לקפוץ. אצבע אחת, תשעה עולמות.</p></div>
+  <a class="btn primario" href="https://play.google.com/store/apps/details?id=com.tagongogames.pipohd" target="_blank" rel="noopener" aria-label="PIPO HD ב-Google Play (נפתח בלשונית חדשה)"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M4 2.8v18.4c0 .5.5.8.9.6l16-9.2a.7.7 0 0 0 0-1.2L4.9 2.2c-.4-.2-.9.1-.9.6Z"/></svg>להורדה ב-Google Play</a>
+ </div>
+</article><article class="juego" id="g-platformerpremium" data-juego="Platformer Premium" data-capturas="[{&quot;t&quot;: &quot;/juegos/platformerpremium/c0-m.webp&quot;, &quot;f&quot;: &quot;/juegos/platformerpremium/c0.webp&quot;, &quot;alt&quot;: &quot;Platformer Premium, צילום מסך 1 מתוך 5&quot;}, {&quot;t&quot;: &quot;/juegos/platformerpremium/c1-m.webp&quot;, &quot;f&quot;: &quot;/juegos/platformerpremium/c1.webp&quot;, &quot;alt&quot;: &quot;Platformer Premium, צילום מסך 2 מתוך 5&quot;}, {&quot;t&quot;: &quot;/juegos/platformerpremium/c2-m.webp&quot;, &quot;f&quot;: &quot;/juegos/platformerpremium/c2.webp&quot;, &quot;alt&quot;: &quot;Platformer Premium, צילום מסך 3 מתוך 5&quot;}, {&quot;t&quot;: &quot;/juegos/platformerpremium/c3-m.webp&quot;, &quot;f&quot;: &quot;/juegos/platformerpremium/c3.webp&quot;, &quot;alt&quot;: &quot;Platformer Premium, צילום מסך 4 מתוך 5&quot;}, {&quot;t&quot;: &quot;/juegos/platformerpremium/c4-m.webp&quot;, &quot;f&quot;: &quot;/juegos/platformerpremium/c4.webp&quot;, &quot;alt&quot;: &quot;Platformer Premium, צילום מסך 5 מתוך 5&quot;}]" aria-labelledby="t-platformerpremium">
+ <div class="galeria"><div class="fondo" style="--fondo:url(/juegos/platformerpremium/c0-t.webp)" aria-hidden="true"></div><div class="fotos" style="--ar:1080/2220"><button type="button" data-i="0" aria-label="הצגת צילום מסך 1 של Platformer Premium בגודל מלא"><img src="/juegos/platformerpremium/c0-m.webp" srcset="/juegos/platformerpremium/c0-t.webp 240w, /juegos/platformerpremium/c0-m.webp 480w" sizes="(max-width:700px) 52vw, 220px" width="480" height="987" loading="lazy" decoding="async" alt="Platformer Premium, צילום מסך 1 מתוך 5"></button><div class="mini"><button type="button" data-i="1" aria-label="הצגת צילום מסך 2 של Platformer Premium בגודל מלא"><img src="/juegos/platformerpremium/c1-t.webp" srcset="/juegos/platformerpremium/c1-t.webp 240w, /juegos/platformerpremium/c1-m.webp 480w" sizes="(max-width:700px) 22vw, 100px" width="240" height="493" loading="lazy" decoding="async" alt="Platformer Premium, צילום מסך 2 מתוך 5"></button><button type="button" data-i="2" aria-label="הצגת צילום מסך 3 של Platformer Premium בגודל מלא"><img src="/juegos/platformerpremium/c2-t.webp" srcset="/juegos/platformerpremium/c2-t.webp 240w, /juegos/platformerpremium/c2-m.webp 480w" sizes="(max-width:700px) 22vw, 100px" width="240" height="493" loading="lazy" decoding="async" alt="Platformer Premium, צילום מסך 3 מתוך 5"></button><button type="button" data-i="3" aria-label="הצגת צילום מסך 4 של Platformer Premium בגודל מלא"><img src="/juegos/platformerpremium/c3-t.webp" srcset="/juegos/platformerpremium/c3-t.webp 240w, /juegos/platformerpremium/c3-m.webp 480w" sizes="(max-width:700px) 22vw, 100px" width="240" height="493" loading="lazy" decoding="async" alt="Platformer Premium, צילום מסך 4 מתוך 5"></button><button type="button" data-i="4" aria-label="הצגת צילום מסך 5 של Platformer Premium בגודל מלא"><img src="/juegos/platformerpremium/c4-t.webp" srcset="/juegos/platformerpremium/c4-t.webp 240w, /juegos/platformerpremium/c4-m.webp 480w" sizes="(max-width:700px) 22vw, 100px" width="240" height="493" loading="lazy" decoding="async" alt="Platformer Premium, צילום מסך 5 מתוך 5"></button></div></div></div>
+ <div class="info"><img src="/juegos/platformerpremium/icono-128.webp" srcset="/juegos/platformerpremium/icono-128.webp 1x, /juegos/platformerpremium/icono.webp 2x" width="64" height="64" loading="lazy" alt="הסמל של Platformer Premium">
+  <div><h3 id="t-platformerpremium">Platformer Premium</h3><p>החזיקו כדי לטעון ועזבו כדי לקפוץ. 120 קפיצות ידניות על פני עשרה עולמות צפים.</p></div>
+  <a class="btn primario" href="https://play.google.com/store/apps/details?id=com.tagongogames.platformerpremium" target="_blank" rel="noopener" aria-label="Platformer Premium ב-Google Play (נפתח בלשונית חדשה)"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M4 2.8v18.4c0 .5.5.8.9.6l16-9.2a.7.7 0 0 0 0-1.2L4.9 2.2c-.4-.2-.9.1-.9.6Z"/></svg>להורדה ב-Google Play</a>
+ </div>
+</article><article class="juego" id="g-ecohd" data-juego="ECO" data-capturas="[{&quot;t&quot;: &quot;/juegos/ecohd/c0-m.webp&quot;, &quot;f&quot;: &quot;/juegos/ecohd/c0.webp&quot;, &quot;alt&quot;: &quot;ECO, צילום מסך 1 מתוך 5&quot;}, {&quot;t&quot;: &quot;/juegos/ecohd/c1-m.webp&quot;, &quot;f&quot;: &quot;/juegos/ecohd/c1.webp&quot;, &quot;alt&quot;: &quot;ECO, צילום מסך 2 מתוך 5&quot;}, {&quot;t&quot;: &quot;/juegos/ecohd/c2-m.webp&quot;, &quot;f&quot;: &quot;/juegos/ecohd/c2.webp&quot;, &quot;alt&quot;: &quot;ECO, צילום מסך 3 מתוך 5&quot;}, {&quot;t&quot;: &quot;/juegos/ecohd/c3-m.webp&quot;, &quot;f&quot;: &quot;/juegos/ecohd/c3.webp&quot;, &quot;alt&quot;: &quot;ECO, צילום מסך 4 מתוך 5&quot;}, {&quot;t&quot;: &quot;/juegos/ecohd/c4-m.webp&quot;, &quot;f&quot;: &quot;/juegos/ecohd/c4.webp&quot;, &quot;alt&quot;: &quot;ECO, צילום מסך 5 מתוך 5&quot;}]" aria-labelledby="t-ecohd">
+ <div class="galeria"><div class="fondo" style="--fondo:url(/juegos/ecohd/c0-t.webp)" aria-hidden="true"></div><div class="fotos" style="--ar:1080/2220"><button type="button" data-i="0" aria-label="הצגת צילום מסך 1 של ECO בגודל מלא"><img src="/juegos/ecohd/c0-m.webp" srcset="/juegos/ecohd/c0-t.webp 240w, /juegos/ecohd/c0-m.webp 480w" sizes="(max-width:700px) 52vw, 220px" width="480" height="987" loading="lazy" decoding="async" alt="ECO, צילום מסך 1 מתוך 5"></button><div class="mini"><button type="button" data-i="1" aria-label="הצגת צילום מסך 2 של ECO בגודל מלא"><img src="/juegos/ecohd/c1-t.webp" srcset="/juegos/ecohd/c1-t.webp 240w, /juegos/ecohd/c1-m.webp 480w" sizes="(max-width:700px) 22vw, 100px" width="240" height="493" loading="lazy" decoding="async" alt="ECO, צילום מסך 2 מתוך 5"></button><button type="button" data-i="2" aria-label="הצגת צילום מסך 3 של ECO בגודל מלא"><img src="/juegos/ecohd/c2-t.webp" srcset="/juegos/ecohd/c2-t.webp 240w, /juegos/ecohd/c2-m.webp 480w" sizes="(max-width:700px) 22vw, 100px" width="240" height="493" loading="lazy" decoding="async" alt="ECO, צילום מסך 3 מתוך 5"></button><button type="button" data-i="3" aria-label="הצגת צילום מסך 4 של ECO בגודל מלא"><img src="/juegos/ecohd/c3-t.webp" srcset="/juegos/ecohd/c3-t.webp 240w, /juegos/ecohd/c3-m.webp 480w" sizes="(max-width:700px) 22vw, 100px" width="240" height="493" loading="lazy" decoding="async" alt="ECO, צילום מסך 4 מתוך 5"></button><button type="button" data-i="4" aria-label="הצגת צילום מסך 5 של ECO בגודל מלא"><img src="/juegos/ecohd/c4-t.webp" srcset="/juegos/ecohd/c4-t.webp 240w, /juegos/ecohd/c4-m.webp 480w" sizes="(max-width:700px) 22vw, 100px" width="240" height="493" loading="lazy" decoding="async" alt="ECO, צילום מסך 5 מתוך 5"></button></div></div></div>
+ <div class="info"><img src="/juegos/ecohd/icono-128.webp" srcset="/juegos/ecohd/icono-128.webp 1x, /juegos/ecohd/icono.webp 2x" width="64" height="64" loading="lazy" alt="הסמל של ECO">
+  <div><h3 id="t-ecohd">ECO</h3><p>ארבעה עיגולים, כל אחד עם צליל, גל ורטט משלו. הקשיבו וחזרו על הרצף.</p></div>
+  <a class="btn primario" href="https://play.google.com/store/apps/details?id=com.tagongogames.ecohd" target="_blank" rel="noopener" aria-label="ECO ב-Google Play (נפתח בלשונית חדשה)"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M4 2.8v18.4c0 .5.5.8.9.6l16-9.2a.7.7 0 0 0 0-1.2L4.9 2.2c-.4-.2-.9.1-.9.6Z"/></svg>להורדה ב-Google Play</a>
+ </div>
+</article><article class="juego" id="g-twyn" data-juego="TWYN" data-capturas="[{&quot;t&quot;: &quot;/juegos/twyn/c0-m.webp&quot;, &quot;f&quot;: &quot;/juegos/twyn/c0.webp&quot;, &quot;alt&quot;: &quot;TWYN, צילום מסך 1 מתוך 6&quot;}, {&quot;t&quot;: &quot;/juegos/twyn/c1-m.webp&quot;, &quot;f&quot;: &quot;/juegos/twyn/c1.webp&quot;, &quot;alt&quot;: &quot;TWYN, צילום מסך 2 מתוך 6&quot;}, {&quot;t&quot;: &quot;/juegos/twyn/c2-m.webp&quot;, &quot;f&quot;: &quot;/juegos/twyn/c2.webp&quot;, &quot;alt&quot;: &quot;TWYN, צילום מסך 3 מתוך 6&quot;}, {&quot;t&quot;: &quot;/juegos/twyn/c3-m.webp&quot;, &quot;f&quot;: &quot;/juegos/twyn/c3.webp&quot;, &quot;alt&quot;: &quot;TWYN, צילום מסך 4 מתוך 6&quot;}, {&quot;t&quot;: &quot;/juegos/twyn/c4-m.webp&quot;, &quot;f&quot;: &quot;/juegos/twyn/c4.webp&quot;, &quot;alt&quot;: &quot;TWYN, צילום מסך 5 מתוך 6&quot;}, {&quot;t&quot;: &quot;/juegos/twyn/c5-m.webp&quot;, &quot;f&quot;: &quot;/juegos/twyn/c5.webp&quot;, &quot;alt&quot;: &quot;TWYN, צילום מסך 6 מתוך 6&quot;}]" aria-labelledby="t-twyn">
+ <div class="galeria"><div class="fondo" style="--fondo:url(/juegos/twyn/c0-t.webp)" aria-hidden="true"></div><div class="fotos" style="--ar:1080/2220"><button type="button" data-i="0" aria-label="הצגת צילום מסך 1 של TWYN בגודל מלא"><img src="/juegos/twyn/c0-m.webp" srcset="/juegos/twyn/c0-t.webp 240w, /juegos/twyn/c0-m.webp 480w" sizes="(max-width:700px) 52vw, 220px" width="480" height="987" loading="lazy" decoding="async" alt="TWYN, צילום מסך 1 מתוך 6"></button><div class="mini"><button type="button" data-i="1" aria-label="הצגת צילום מסך 2 של TWYN בגודל מלא"><img src="/juegos/twyn/c1-t.webp" srcset="/juegos/twyn/c1-t.webp 240w, /juegos/twyn/c1-m.webp 480w" sizes="(max-width:700px) 22vw, 100px" width="240" height="493" loading="lazy" decoding="async" alt="TWYN, צילום מסך 2 מתוך 6"></button><button type="button" data-i="2" aria-label="הצגת צילום מסך 3 של TWYN בגודל מלא"><img src="/juegos/twyn/c2-t.webp" srcset="/juegos/twyn/c2-t.webp 240w, /juegos/twyn/c2-m.webp 480w" sizes="(max-width:700px) 22vw, 100px" width="240" height="493" loading="lazy" decoding="async" alt="TWYN, צילום מסך 3 מתוך 6"></button><button type="button" data-i="3" aria-label="הצגת צילום מסך 4 של TWYN בגודל מלא"><img src="/juegos/twyn/c3-t.webp" srcset="/juegos/twyn/c3-t.webp 240w, /juegos/twyn/c3-m.webp 480w" sizes="(max-width:700px) 22vw, 100px" width="240" height="493" loading="lazy" decoding="async" alt="TWYN, צילום מסך 4 מתוך 6"></button><button type="button" data-i="4" aria-label="הצגת צילום מסך 5 של TWYN בגודל מלא"><img src="/juegos/twyn/c4-t.webp" srcset="/juegos/twyn/c4-t.webp 240w, /juegos/twyn/c4-m.webp 480w" sizes="(max-width:700px) 22vw, 100px" width="240" height="493" loading="lazy" decoding="async" alt="TWYN, צילום מסך 5 מתוך 6"><span class="mas" aria-hidden="true">+1</span></button></div></div></div>
+ <div class="info"><img src="/juegos/twyn/icono-128.webp" srcset="/juegos/twyn/icono-128.webp 1x, /juegos/twyn/icono.webp 2x" width="64" height="64" loading="lazy" alt="הסמל של TWYN">
+  <div><h3 id="t-twyn">TWYN</h3><p>שתי זהויות בכל אריח. מקום אחד שמתאים. מצאו אותו.</p></div>
+  <a class="btn primario" href="https://play.google.com/store/apps/details?id=com.tagongogames.twyn" target="_blank" rel="noopener" aria-label="TWYN ב-Google Play (נפתח בלשונית חדשה)"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M4 2.8v18.4c0 .5.5.8.9.6l16-9.2a.7.7 0 0 0 0-1.2L4.9 2.2c-.4-.2-.9.1-.9.6Z"/></svg>להורדה ב-Google Play</a>
+ </div>
+</article></div>
+</div></section>
+</main>
+<dialog class="visor" id="visor" aria-label="המשחקים שלנו" data-de="{i} מתוך {n}">
+ <div class="fondo-visor" aria-hidden="true"></div>
+ <div class="escena"><img class="foto" alt=""></div>
+ <div class="arriba"><span class="titulo" aria-live="polite"></span><button class="cerrar" type="button" aria-label="סגירה"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.3 5.7 12 12l6.3 6.3-1.4 1.4L10.6 13.4 4.3 19.7l-1.4-1.4L9.2 12 2.9 5.7l1.4-1.4 6.3 6.3 6.3-6.3 1.4 1.4Z"/></svg></button></div>
+ <div class="abajo"><button class="ant flecha" type="button" aria-label="הקודם"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="m15.4 4 1.4 1.4L10.2 12l6.6 6.6-1.4 1.4-8-8 8-8Z"/></svg></button><span class="contador" aria-live="polite"></span><span class="zoom"><button class="menos" type="button" aria-label="הקטנה"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M5 11h14v2H5z"/></svg></button><button class="mas-z" type="button" aria-label="הגדלה"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M11 5h2v6h6v2h-6v6h-2v-6H5v-2h6V5Z"/></svg></button></span><button class="sig flecha" type="button" aria-label="הבא"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="m8.6 20-1.4-1.4 6.6-6.6-6.6-6.6L8.6 4l8 8-8 8Z"/></svg></button></div>
+</dialog>
+<footer><div class="wrap">
+ <nav aria-label="Tagongo Games"><ul>
+  <li><a href="https://play.google.com/store/apps/developer?id=Tagongo+Games" target="_blank" rel="noopener">Google Play</a></li>
+  <li><a href="/he/privacy">מדיניות פרטיות</a></li>
+  <li><a href="/he/terms">תנאי שימוש</a></li>
+  <li><a href="/he/accessibility">הצהרת נגישות</a></li>
+  <li><a href="mailto:tagongo@gmail.com">יצירת קשר:&nbsp;<bdi>tagongo@gmail.com</bdi></a></li>
+  <li><button type="button" class="enlace" data-cookies>הגדרות עוגיות</button></li>
+ </ul></nav>
+ <p style="margin:0">© 2026 Tagongo Games</p>
+</div></footer>
+<section class="cookies" id="cookies" role="region" aria-label="עוגיות" hidden><p>באישורכם נשתמש בעוגיות של Google Analytics כדי לספור ביקורים ולשפר את האתר. בלי פרסומות ובלי Google signals. אם תדחו, שום דבר לא ייטען. <a href="/he/privacy">מדיניות פרטיות</a></p><div class="botones"><button type="button" data-c="no">דחייה</button><button type="button" data-c="si">אישור</button></div></section>
+<script>(function(){var ID="G-K4ZYL4TT1X",K="tg-consent",b=document.getElementById("cookies");if(!b)return;
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
+gtag("consent","default",{ad_storage:"denied",ad_user_data:"denied",ad_personalization:"denied",analytics_storage:"denied"});
+function leer(){try{var v=JSON.parse(localStorage.getItem(K)||"null");if(v&&Date.now()-v.t<31536e6)return v.v}catch(e){}return null}
+function guardar(v){try{localStorage.setItem(K,JSON.stringify({v:v,t:Date.now()}))}catch(e){}}
+var cargado=false;function cargar(){if(cargado)return;cargado=true;gtag("consent","update",{analytics_storage:"granted"});gtag("js",new Date());
+ gtag("config",ID,{allow_google_signals:false,allow_ad_personalization_signals:false});
+ var s=document.createElement("script");s.async=true;s.src="https://www.googletagmanager.com/gtag/js?id="+ID;document.head.appendChild(s)}
+function borrar(){document.cookie.split(";").forEach(function(c){var n=c.split("=")[0].trim();if(n.indexOf("_ga")===0){var h=location.hostname;
+ [h,"."+h,"."+h.split(".").slice(-2).join(".")].forEach(function(d){document.cookie=n+"=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;domain="+d});document.cookie=n+"=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/"}})}
+var v=leer(),gpc=navigator.globalPrivacyControl===true;
+if(v==="granted")cargar();else if(v===null&&!gpc)b.hidden=false;
+b.querySelector("[data-c=si]").addEventListener("click",function(){guardar("granted");b.hidden=true;cargar()});
+b.querySelector("[data-c=no]").addEventListener("click",function(){guardar("denied");b.hidden=true;borrar();if(cargado){gtag("consent","update",{analytics_storage:"denied"});location.reload()}});
+document.querySelectorAll("[data-cookies]").forEach(function(x){x.addEventListener("click",function(){b.hidden=false;b.querySelector("[data-c=no]").focus()})})})();</script>
+<script>
+(function(){
+var H=document.documentElement,RTL=H.dir==="rtl";
+function guardar(k,v){try{var a=JSON.parse(localStorage.getItem("tg-a11y")||"{}");if(k===null)a={};else a[k]=v;localStorage.setItem("tg-a11y",JSON.stringify(a))}catch(e){}}
+function menus(id){var m=document.getElementById(id);if(!m)return;var b=m.querySelector("button"),p=m.querySelector(".panel");
+ function cerrar(f){p.hidden=true;b.setAttribute("aria-expanded","false");if(f)b.focus()}
+ b.addEventListener("click",function(){var ab=p.hidden;document.querySelectorAll(".menu .panel").forEach(function(x){x.hidden=true});document.querySelectorAll(".menu>button").forEach(function(x){x.setAttribute("aria-expanded","false")});p.hidden=!ab;b.setAttribute("aria-expanded",String(ab));if(ab){var f=p.querySelector("a,button");f&&f.focus()}});
+ m.addEventListener("keydown",function(e){if(e.key==="Escape"&&!p.hidden){cerrar(true)}});
+ document.addEventListener("click",function(e){if(!m.contains(e.target))cerrar(false)});
+ m.addEventListener("focusout",function(e){if(e.relatedTarget&&!m.contains(e.relatedTarget))cerrar(false)})}
+menus("m-idioma");menus("m-a11y");
+document.querySelectorAll("#lista-idiomas a").forEach(function(a){a.addEventListener("click",function(){try{localStorage.setItem("tg-lang",a.dataset.lang)}catch(e){}})});
+document.querySelectorAll("[data-a11y]").forEach(function(b){var k=b.dataset.a11y;if(k!=="reiniciar")b.setAttribute("aria-pressed",String(H.classList.contains("a11y-"+k)));
+ b.addEventListener("click",function(){if(k==="reiniciar"){["texto","contraste","enlaces","quieto"].forEach(function(x){H.classList.remove("a11y-"+x)});guardar(null);document.querySelectorAll("[data-a11y]").forEach(function(o){o.dataset.a11y!=="reiniciar"&&o.setAttribute("aria-pressed","false")});sincroPausa();return}
+  var on=!H.classList.contains("a11y-"+k);H.classList.toggle("a11y-"+k,on);b.setAttribute("aria-pressed",String(on));guardar(k,on);if(k==="quieto")sincroPausa()})});
+/* guiño del capibara */
+var caja=document.querySelector(".logo-caja"),bp=document.getElementById("pausa-anim"),tm=null;
+var reducir=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+function quieto(){return reducir||H.classList.contains("a11y-quieto")}
+function sincroPausa(){if(!bp)return;var q=H.classList.contains("a11y-quieto");bp.setAttribute("aria-pressed",String(q));bp.querySelector(".sr").textContent=q?bp.dataset.on:bp.dataset.off;programar()}
+function gesto(c,ms){if(!caja)return;caja.classList.add(c);setTimeout(function(){caja.classList.remove(c)},ms)}
+function programar(){clearTimeout(tm);if(!caja||quieto())return;tm=setTimeout(function(){if(Math.random()<.7)gesto("guina",380);else{gesto("parpadea",140);}programar()},5000+Math.random()*2000)}
+if(caja){caja.addEventListener("pointerenter",function(){quieto()||gesto("guina",420)});caja.addEventListener("click",function(){quieto()||gesto("guina",420)});programar()}
+if(bp){bp.addEventListener("click",function(){var on=!H.classList.contains("a11y-quieto");H.classList.toggle("a11y-quieto",on);guardar("quieto",on);var o=document.querySelector('[data-a11y="quieto"]');o&&o.setAttribute("aria-pressed",String(on));sincroPausa()});sincroPausa()}
+/* visor de capturas: fondo borroso de la propia imagen, zoom real (pellizcar, doble toque, rueda, botones, teclado), arrastrar */
+var dlg=document.getElementById("visor");if(!dlg)return;
+var foto=dlg.querySelector(".foto"),cont=dlg.querySelector(".contador"),tit=dlg.querySelector(".titulo"),fondoV=dlg.querySelector(".fondo-visor"),grupo=[],idx=0,origen=null,esc=1,tx=0,ty=0;
+function limitar(){if(esc<=1){esc=1;tx=0;ty=0;return}var r=foto.getBoundingClientRect(),w=r.width/esc,h=r.height/esc,mx=w*(esc-1)/2,my=h*(esc-1)/2;tx=Math.max(-mx,Math.min(mx,tx));ty=Math.max(-my,Math.min(my,ty))}
+function aplicar(suave){foto.classList.toggle("suave",!!suave&&!quieto());foto.style.transform="translate("+tx+"px,"+ty+"px) scale("+esc+")";foto.style.cursor=esc>1?"grab":"zoom-in"}
+function zoomA(n,cx,cy){var r=foto.getBoundingClientRect(),ox=(cx===undefined?r.left+r.width/2:cx)-(r.left+r.width/2),oy=(cy===undefined?r.top+r.height/2:cy)-(r.top+r.height/2);
+ var k=Math.min(4,Math.max(1,n))/esc;tx=tx*k-ox*(k-1);ty=ty*k-oy*(k-1);esc=Math.min(4,Math.max(1,n));limitar();aplicar(true)}
+function mostrar(i,dir){idx=(i+grupo.length)%grupo.length;var g=grupo[idx];esc=1;tx=0;ty=0;aplicar();
+ foto.style.backgroundImage="url("+g.t+")";foto.src=g.t;fondoV.style.setProperty("--fondo","url("+g.t+")");
+ var im=new Image();im.onload=function(){if(grupo[idx]===g){foto.src=g.f;foto.style.backgroundImage="none"}};im.src=g.f;
+ foto.alt=g.alt;cont.textContent=dlg.dataset.de.replace("{i}",idx+1).replace("{n}",grupo.length);
+ if(dir&&!quieto()&&foto.animate)foto.animate([{opacity:.2,transform:"translateX("+(dir*(RTL?-40:40))+"px)"},{opacity:1,transform:"none"}],{duration:220,easing:"ease-out"})}
+function abrir(btn){var art=btn.closest("[data-juego]");grupo=JSON.parse(art.dataset.capturas||"[]");
+ origen=btn;tit.textContent=art.dataset.juego;var i=+btn.dataset.i||0;dlg.showModal();mostrar(i,0);
+ if(!quieto()&&foto.animate){var r=btn.getBoundingClientRect(),f=foto.getBoundingClientRect();if(f.width){foto.animate([{transform:"translate("+(r.left+r.width/2-(f.left+f.width/2))+"px,"+(r.top+r.height/2-(f.top+f.height/2))+"px) scale("+(r.width/f.width)+")",opacity:.4},{transform:"none",opacity:1}],{duration:280,easing:"cubic-bezier(.2,.8,.2,1)"})}}
+ dlg.querySelector(".cerrar").focus()}
+function cerrarV(){dlg.close()}
+dlg.addEventListener("close",function(){origen&&origen.focus()});
+document.querySelectorAll(".fotos button").forEach(function(b){b.addEventListener("click",function(){abrir(b)})});
+dlg.querySelector(".cerrar").addEventListener("click",cerrarV);
+dlg.querySelector(".ant").addEventListener("click",function(){mostrar(idx-1,-1)});
+dlg.querySelector(".sig").addEventListener("click",function(){mostrar(idx+1,1)});
+dlg.querySelector(".mas-z").addEventListener("click",function(){zoomA(esc*1.6)});
+dlg.querySelector(".menos").addEventListener("click",function(){zoomA(esc/1.6)});
+dlg.addEventListener("keydown",function(e){if(e.key==="ArrowRight"){e.preventDefault();RTL?mostrar(idx-1,-1):mostrar(idx+1,1)}else if(e.key==="ArrowLeft"){e.preventDefault();RTL?mostrar(idx+1,1):mostrar(idx-1,-1)}
+ else if(e.key==="+"||e.key==="="){e.preventDefault();zoomA(esc*1.6)}else if(e.key==="-"){e.preventDefault();zoomA(esc/1.6)}});
+var esc_=dlg.querySelector(".escena");
+esc_.addEventListener("click",function(e){if(e.target===e.currentTarget&&esc===1)cerrarV()});
+esc_.addEventListener("wheel",function(e){e.preventDefault();zoomA(esc*(e.deltaY<0?1.15:1/1.15),e.clientX,e.clientY)},{passive:false});
+/* gestos: deslizar, pellizcar, arrastrar con zoom, bajar para cerrar, doble toque/clic para acercar */
+var pts={},x0=0,y0=0,d0=0,e0=1,t0=0,ult=0,px=0,py=0;
+esc_.addEventListener("pointerdown",function(e){esc_.setPointerCapture&&esc_.setPointerCapture(e.pointerId);pts[e.pointerId]=e;var k=Object.keys(pts);if(k.length===1){x0=px=e.clientX;y0=py=e.clientY;t0=Date.now()}if(k.length===2){var a=pts[k[0]],b=pts[k[1]];d0=Math.hypot(a.clientX-b.clientX,a.clientY-b.clientY);e0=esc}});
+esc_.addEventListener("pointermove",function(e){if(!pts[e.pointerId])return;pts[e.pointerId]=e;var k=Object.keys(pts);
+ if(k.length===2){var a=pts[k[0]],b=pts[k[1]];zoomA(e0*Math.hypot(a.clientX-b.clientX,a.clientY-b.clientY)/d0,(a.clientX+b.clientX)/2,(a.clientY+b.clientY)/2)}
+ else if(esc>1){tx+=e.clientX-px;ty+=e.clientY-py;px=e.clientX;py=e.clientY;limitar();aplicar()}
+ else{var dx=e.clientX-x0,dy=e.clientY-y0;if(Math.abs(dy)>Math.abs(dx)&&dy>0){foto.style.transform="translateY("+dy+"px)";foto.style.opacity=String(Math.max(.3,1-dy/400))}else{foto.style.transform="translateX("+dx+"px)"}}});
+function fin(e){if(!pts[e.pointerId])return;var k=Object.keys(pts).length;delete pts[e.pointerId];if(k>1)return;
+ var dx=e.clientX-x0,dy=e.clientY-y0;foto.style.opacity="";
+ if(Date.now()-t0<300&&Math.abs(dx)<10&&Math.abs(dy)<10){if(Date.now()-ult<320){esc>1?zoomA(1):zoomA(2.4,e.clientX,e.clientY);ult=0;return}ult=Date.now();aplicar();return}
+ if(esc>1)return;
+ if(dy>90&&Math.abs(dy)>Math.abs(dx)){cerrarV();return}
+ if(Math.abs(dx)>50){var adelante=dx<0;if(RTL)adelante=!adelante;adelante?mostrar(idx+1,1):mostrar(idx-1,-1);return}aplicar(true)}
+esc_.addEventListener("pointerup",fin);esc_.addEventListener("pointercancel",fin);
+})();
+</script>
+</body>
+</html>
