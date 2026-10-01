@@ -102,6 +102,19 @@ section{padding-block:40px}
 .fotos img{width:100%;height:auto;aspect-ratio:var(--ar);object-fit:cover;background:#0a1020}
 .fotos .mini{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .fotos .mas{position:absolute;inset:0;display:grid;place-items:center;background:rgba(6,10,20,.62);color:#fff;font:700 1.35rem var(--head);backdrop-filter:blur(2px)}
+/* video de gameplay (01/10): portada local; el reproductor se crea sólo al tocar */
+.video{margin-top:10px}
+.video button,.video iframe{position:relative;display:block;width:100%;aspect-ratio:16/9;padding:0;border:0;border-radius:14px;overflow:hidden;background:#0a1020;box-shadow:0 10px 24px rgba(0,0,0,.38)}
+.video button{cursor:pointer;transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s}
+.video button:hover,.video button:focus-visible{transform:translateY(-3px) scale(1.02);box-shadow:0 16px 34px rgba(0,0,0,.5)}
+.video button:active{transform:scale(.98)}
+.video.vertical{max-width:62%;margin-inline:auto}.video.vertical button,.video.vertical iframe{aspect-ratio:9/16}
+.video img{width:100%;height:100%;object-fit:cover}
+.video .reproducir{position:absolute;inset:0;margin:auto;width:64px;height:64px;border-radius:50%;display:grid;place-items:center;background:var(--acc-bg);color:var(--on-acc);box-shadow:0 8px 24px rgba(0,0,0,.45)}
+.video .reproducir svg{width:26px;height:26px;margin-inline-start:4px}
+[dir=rtl] .video .reproducir svg{margin-inline-start:0;margin-inline-end:4px;transform:none}
+.video .etq-video{position:absolute;inset-inline-start:10px;bottom:10px;padding:4px 12px;border-radius:999px;background:rgba(6,10,20,.78);color:#fff;font:600 .9rem var(--head)}
+@media (prefers-reduced-motion:reduce){.video button{transition:none}.video button:hover{transform:none}}
 .juego:hover .galeria .fondo{transform:scale(1.2)}
 .galeria .fondo{transition:transform 1.2s ease}
 @media (prefers-reduced-motion:reduce){.fotos button,.galeria .fondo{transition:none}.fotos button:hover{transform:none}}
@@ -219,6 +232,12 @@ function gesto(c,ms){if(!caja)return;caja.classList.add(c);setTimeout(function()
 function programar(){clearTimeout(tm);if(!caja||quieto())return;tm=setTimeout(function(){if(Math.random()<.7)gesto("guina",380);else{gesto("parpadea",140);}programar()},5000+Math.random()*2000)}
 if(caja){caja.addEventListener("pointerenter",function(){quieto()||gesto("guina",420)});caja.addEventListener("click",function(){quieto()||gesto("guina",420)});programar()}
 if(bp){bp.addEventListener("click",function(){var on=!H.classList.contains("a11y-quieto");H.classList.toggle("a11y-quieto",on);guardar("quieto",on);var o=document.querySelector('[data-a11y="quieto"]');o&&o.setAttribute("aria-pressed",String(on));sincroPausa()});sincroPausa()}
+/* video: el iframe de youtube-nocookie se crea sólo cuando la persona toca el botón (nada de terceros al cargar) */
+document.querySelectorAll(".video button").forEach(function(b){b.addEventListener("click",function(){var c=b.parentNode,id=c.dataset.yt;
+ if(!/^[A-Za-z0-9_-]{11}$/.test(id))return;var f=document.createElement("iframe");
+ f.src="https://www.youtube-nocookie.com/embed/"+id+"?autoplay=1&rel=0&playsinline=1&modestbranding=1&hl="+(H.lang||"en");
+ f.title=c.dataset.titulo;f.allow="autoplay; encrypted-media; picture-in-picture; fullscreen";f.allowFullscreen=true;
+ f.referrerPolicy="strict-origin-when-cross-origin";f.loading="eager";c.replaceChild(f,b);f.focus()})});
 /* visor de capturas: fondo borroso de la propia imagen, zoom real (pellizcar, doble toque, rueda, botones, teclado), arrastrar */
 var dlg=document.getElementById("visor");if(!dlg)return;
 var foto=dlg.querySelector(".foto"),cont=dlg.querySelector(".contador"),tit=dlg.querySelector(".titulo"),fondoV=dlg.querySelector(".fondo-visor"),grupo=[],idx=0,origen=null,esc=1,tx=0,ty=0;
