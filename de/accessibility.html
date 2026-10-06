@@ -110,6 +110,17 @@ section{padding-block:40px}
 .video button:active{transform:scale(.98)}
 .video.vertical{max-width:62%;margin-inline:auto}.video.vertical button,.video.vertical iframe{aspect-ratio:9/16}
 .video img{width:100%;height:100%;object-fit:cover}
+/* cine (06/10, pedido del dueño): el video se abre en grande, a pantalla completa, en su formato real */
+.cine{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;padding:max(16px,env(safe-area-inset-top)) 12px max(16px,env(safe-area-inset-bottom));background:rgba(4,7,14,.9);backdrop-filter:blur(8px);animation:cineEntra .22s ease}
+.cine .marco{width:min(94vw,calc(86vh*16/9));aspect-ratio:16/9;border-radius:16px;overflow:hidden;background:#000;box-shadow:0 30px 90px rgba(0,0,0,.65)}
+.cine.vertical .marco{width:auto;height:min(86vh,calc(94vw*16/9));aspect-ratio:9/16}
+.cine iframe{display:block;width:100%;height:100%;border:0}
+.cine .cerrar-cine{position:absolute;top:max(12px,env(safe-area-inset-top));inset-inline-end:12px;width:52px;height:52px;border-radius:50%;border:0;display:grid;place-items:center;background:rgba(255,255,255,.16);color:#fff;cursor:pointer;transition:background .2s}
+.cine .cerrar-cine:hover,.cine .cerrar-cine:focus-visible{background:rgba(255,255,255,.3)}
+.cine .cerrar-cine svg{width:26px;height:26px}
+body.cine-abierto{overflow:hidden}
+@keyframes cineEntra{from{opacity:0;transform:scale(.98)}to{opacity:1;transform:none}}
+.a11y-quieto .cine{animation:none}
 .video .reproducir{position:absolute;inset:0;margin:auto;width:64px;height:64px;border-radius:50%;display:grid;place-items:center;background:var(--acc-bg);color:var(--on-acc);box-shadow:0 8px 24px rgba(0,0,0,.45)}
 .video .reproducir svg{width:26px;height:26px;margin-inline-start:4px}
 [dir=rtl] .video .reproducir svg{margin-inline-start:0;margin-inline-end:4px;transform:none}
@@ -234,10 +245,19 @@ if(caja){caja.addEventListener("pointerenter",function(){quieto()||gesto("guina"
 if(bp){bp.addEventListener("click",function(){var on=!H.classList.contains("a11y-quieto");H.classList.toggle("a11y-quieto",on);guardar("quieto",on);var o=document.querySelector('[data-a11y="quieto"]');o&&o.setAttribute("aria-pressed",String(on));sincroPausa()});sincroPausa()}
 /* video: el iframe de youtube-nocookie se crea sólo cuando la persona toca el botón (nada de terceros al cargar) */
 document.querySelectorAll(".video button").forEach(function(b){b.addEventListener("click",function(){var c=b.parentNode,id=c.dataset.yt;
- if(!/^[A-Za-z0-9_-]{11}$/.test(id))return;var f=document.createElement("iframe");
+ if(!/^[A-Za-z0-9_-]{11}$/.test(id))return;
+ var o=document.createElement("div");o.className="cine"+(c.classList.contains("vertical")?" vertical":"");
+ o.setAttribute("role","dialog");o.setAttribute("aria-modal","true");o.setAttribute("aria-label",c.dataset.titulo||"");
+ var x=document.createElement("button");x.type="button";x.className="cerrar-cine";x.setAttribute("aria-label",c.dataset.cerrar||"Close");
+ var ic=document.querySelector("#visor .cerrar svg");x.innerHTML=ic?ic.outerHTML:"\u00d7";
+ var m=document.createElement("div");m.className="marco";var f=document.createElement("iframe");
  f.src="https://www.youtube-nocookie.com/embed/"+id+"?autoplay=1&rel=0&playsinline=1&modestbranding=1&hl="+(H.lang||"en");
  f.title=c.dataset.titulo;f.allow="autoplay; encrypted-media; picture-in-picture; fullscreen";f.allowFullscreen=true;
- f.referrerPolicy="strict-origin-when-cross-origin";f.loading="eager";c.replaceChild(f,b);f.focus()})});
+ f.referrerPolicy="strict-origin-when-cross-origin";m.appendChild(f);o.appendChild(x);o.appendChild(m);
+ function cerrarCine(){document.removeEventListener("keydown",tecla);o.remove();document.body.classList.remove("cine-abierto");b.focus()}
+ function tecla(e){if(e.key==="Escape")cerrarCine()}
+ x.addEventListener("click",cerrarCine);o.addEventListener("click",function(e){if(e.target===o)cerrarCine()});
+ document.addEventListener("keydown",tecla);document.body.appendChild(o);document.body.classList.add("cine-abierto");x.focus()})});
 /* visor de capturas: fondo borroso de la propia imagen, zoom real (pellizcar, doble toque, rueda, botones, teclado), arrastrar */
 var dlg=document.getElementById("visor");if(!dlg)return;
 var foto=dlg.querySelector(".foto"),cont=dlg.querySelector(".contador"),tit=dlg.querySelector(".titulo"),fondoV=dlg.querySelector(".fondo-visor"),grupo=[],idx=0,origen=null,esc=1,tx=0,ty=0;
