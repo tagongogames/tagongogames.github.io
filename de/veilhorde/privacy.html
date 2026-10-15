@@ -210,20 +210,29 @@ dialog.visor::backdrop{background:rgba(4,8,18,.9)}
  </ul></nav>
  <p style="margin:0">© 2026 Tagongo Games</p>
 </div></footer>
-<section class="cookies" id="cookies" role="region" aria-label="Cookies" hidden><p>Mit deiner Erlaubnis nutzen wir Cookies von Google Analytics, um Besuche zu zählen und diese Website zu verbessern. Keine Werbung und keine Google Signals. Wenn du ablehnst, wird nichts geladen. <a href="/de/privacy">Datenschutzerklärung</a></p><div class="botones"><button type="button" data-c="no">Ablehnen</button><button type="button" data-c="si">Akzeptieren</button></div></section>
+<section class="cookies" id="cookies" role="region" aria-label="Cookies" hidden><p>Wir verwenden Google-Analytics-Cookies, um Besuche zu zählen und zu sehen, wie die Website genutzt wird. Keine Werbung und kein Google Signals. Wenn du ablehnst, werden keine Analyse-Cookies gesetzt. <a href="/de/privacy">Datenschutzerklärung</a></p><div class="botones"><button type="button" data-c="no">Ablehnen</button><button type="button" data-c="si">Akzeptieren</button></div></section>
 <script>(function(){var ID="G-K4ZYL4TT1X",K="tg-consent",b=document.getElementById("cookies");if(!b)return;
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
-gtag("consent","default",{ad_storage:"denied",ad_user_data:"denied",ad_personalization:"denied",analytics_storage:"denied"});
+var AD={ad_storage:"denied",ad_user_data:"denied",ad_personalization:"denied"};
 function leer(){try{var v=JSON.parse(localStorage.getItem(K)||"null");if(v&&Date.now()-v.t<31536e6)return v.v}catch(e){}return null}
 function guardar(v){try{localStorage.setItem(K,JSON.stringify({v:v,t:Date.now()}))}catch(e){}}
-var cargado=false;function cargar(){if(cargado)return;cargado=true;gtag("consent","update",{analytics_storage:"granted"});gtag("js",new Date());
- gtag("config",ID,{allow_google_signals:false,allow_ad_personalization_signals:false});
- var s=document.createElement("script");s.async=true;s.src="https://www.googletagmanager.com/gtag/js?id="+ID;document.head.appendChild(s)}
 function borrar(){document.cookie.split(";").forEach(function(c){var n=c.split("=")[0].trim();if(n.indexOf("_ga")===0){var h=location.hostname;
  [h,"."+h,"."+h.split(".").slice(-2).join(".")].forEach(function(d){document.cookie=n+"=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;domain="+d});document.cookie=n+"=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/"}})}
-var v=leer(),gpc=navigator.globalPrivacyControl===true;
-if(v==="granted")cargar();else if(v===null&&!gpc)b.hidden=false;
-b.querySelector("[data-c=si]").addEventListener("click",function(){guardar("granted");b.hidden=true;cargar()});
+var v=leer(),gpc=navigator.globalPrivacyControl===true,tz="";try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||""}catch(e){}
+var europa=/^Europe\/|^Atlantic\/(Canary|Madeira|Azores|Reykjavik|Faroe)/.test(tz),cargado=false;
+function cargar(){if(cargado)return;cargado=true;
+ gtag("consent","default",Object.assign({analytics_storage:"granted"},AD));
+ gtag("consent","default",Object.assign({analytics_storage:"denied",region:["AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LV", "LT", "LU", "MT", "NL", "PL", "PT", "RO", "SK", "SI", "ES", "SE", "IS", "LI", "NO", "GB", "CH"]},AD));
+ if(v==="granted")gtag("consent","update",{analytics_storage:"granted"});
+ gtag("js",new Date());gtag("config",ID,{allow_google_signals:false,allow_ad_personalization_signals:false});
+ var s=document.createElement("script");s.async=true;s.src="https://www.googletagmanager.com/gtag/js?id="+ID;document.head.appendChild(s);
+ document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a,button");if(!a||a.closest("#cookies"))return;
+  var art=a.closest("[data-juego]"),t=(a.getAttribute("aria-label")||a.textContent||"").replace(/\s+/g," ").trim().slice(0,60);
+  gtag("event","toque",{link_text:(art?art.dataset.juego+": ":"")+t,link_url:a.href||"",outbound:false})},true)}
+if(v!=="denied"&&!gpc)cargar();
+if(v===null&&!gpc&&europa)b.hidden=false;
+b.querySelector("[data-c=si]").addEventListener("click",function(){guardar("granted");v="granted";b.hidden=true;
+ if(cargado)gtag("consent","update",{analytics_storage:"granted"});else cargar()});
 b.querySelector("[data-c=no]").addEventListener("click",function(){guardar("denied");b.hidden=true;borrar();if(cargado){gtag("consent","update",{analytics_storage:"denied"});location.reload()}});
 document.querySelectorAll("[data-cookies]").forEach(function(x){x.addEventListener("click",function(){b.hidden=false;b.querySelector("[data-c=no]").focus()})})})();</script>
 <script>
