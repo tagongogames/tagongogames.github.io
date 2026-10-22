@@ -1,0 +1,15 @@
+[
+ {
+  "relation": [
+   "delegate_permission/common.handle_all_urls"
+  ],
+  "target": {
+   "namespace": "android_app",
+   "package_name": "com.tagongogames.torquark",
+   "sha256_cert_fingerprints": [
+    "E6:8C:08:29:D5:FA:2F:D7:A6:28:F6:5D:4C:EA:E2:D5:7C:74:ED:31:29:38:DA:73:78:BF:31:9E:93:00:A0:12",
+    "57:05:16:27:D4:38:2A:1F:E2:D5:A5:AC:14:05:0F:51:EF:64:EF:B7:A6:55:82:76:62:5A:BD:AE:7C:63:59:01"
+   ]
+  }
+ }
+]
