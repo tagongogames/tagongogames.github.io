@@ -199,7 +199,7 @@ dialog.visor::backdrop{background:rgba(4,8,18,.9)}
   </div>
  </div>
 </div></header>
-<style>[hidden]{display:none!important}#nf,#rp{text-align:center;padding:8vh 0}#rp .cta,#nf .cta{justify-content:center;flex-wrap:wrap}</style><main id="contenido" tabindex="-1"><div class="wrap doc"><section id="nf"><h1>Page not found</h1><p>This page does not exist or has moved.</p><div class="cta"><a class="btn primario" href="/">Go to Tagongo Games</a></div></section><section id="rp" hidden><h1>Install <span data-juego>the game</span> to watch this fight</h1><p>A friend shared a fight replay. Replays play only inside <span data-juego>the game</span>: install it from Google Play and the fight opens right after.</p><div class="cta"><a class="btn primario" id="rp-play" href="https://play.google.com/store/apps/developer?id=Tagongo+Games" rel="noopener">Get it on Google Play</a><a class="btn" id="rp-abrir" href="/" hidden>Open the game</a></div><p id="rp-android" hidden><em>Available on Android.</em></p></section></div></main><footer><div class="wrap">
+<style>[hidden]{display:none!important}#nf,#rp,#am{text-align:center;padding:8vh 0}#rp .cta,#nf .cta,#am .cta{justify-content:center;flex-wrap:wrap}</style><main id="contenido" tabindex="-1"><div class="wrap doc"><section id="nf"><h1>Page not found</h1><p>This page does not exist or has moved.</p><div class="cta"><a class="btn primario" href="/">Go to Tagongo Games</a></div></section><section id="rp" hidden><h1>Install <span data-juego>the game</span> to watch this fight</h1><p>A friend shared a fight replay. Replays play only inside <span data-juego>the game</span>: install it from Google Play and the fight opens right after.</p><div class="cta"><a class="btn primario" id="rp-play" href="https://play.google.com/store/apps/developer?id=Tagongo+Games" rel="noopener">Get it on Google Play</a><a class="btn" id="rp-abrir" href="/" hidden>Open the game</a></div><p id="rp-android" hidden><em>Available on Android.</em></p></section><section id="am" hidden><h1>A friend invites you to <span data-juego-am>the game</span></h1><p>Friend code: <strong id="am-cod" dir="ltr"></strong></p><p>Open the game to send the friend request, or install it from Google Play and type the code in Friends.</p><div class="cta"><a class="btn primario" id="am-play" href="https://play.google.com/store/apps/developer?id=Tagongo+Games" rel="noopener">Get it on Google Play</a><a class="btn" id="am-abrir" href="/" hidden>Open the game</a></div><p id="am-android" hidden><em>Available on Android.</em></p></section></div></main><footer><div class="wrap">
  <nav aria-label="Tagongo Games"><ul>
   <li><a href="https://play.google.com/store/apps/developer?id=Tagongo+Games" target="_blank" rel="noopener">Google Play</a></li>
   <li><a href="/privacy">Privacy policy</a></li>
@@ -350,6 +350,16 @@ var ns=d.querySelectorAll("[data-juego]");for(var i=0;i<ns.length;i++)ns[i].text
 $("rp-play").href=play;$("rp-abrir").textContent="Open in "+g.n;
 if(/Android/i.test(navigator.userAgent)){var a=$("rp-abrir");a.href=intent;a.hidden=false;
 try{if(!sessionStorage.getItem("rp-"+id)){sessionStorage.setItem("rp-"+id,"1");location.href=intent}}catch(e){}}
-else $("rp-android").hidden=false})();</script>
+else $("rp-android").hidden=false})();(function(){var J={"live-alien": {"n": "LIVE ALIEN", "p": "com.tagongogames.livealien", "e": "livealien"}},m=location.pathname.match(/^\/([a-z0-9-]+)\/a\/([A-Za-z0-9]{4}-?[A-Za-z0-9]{4})\/?$/);if(!m||!J[m[1]])return;
+var g=J[m[1]],c=m[2].replace("-","").toUpperCase(),cv=c.slice(0,4)+"-"+c.slice(4),
+play="https://play.google.com/store/apps/details?id="+g.p+"&referrer="+encodeURIComponent("amigo="+c),
+intent="intent://amigo/"+c+"#Intent;scheme="+g.e+";package="+g.p+";S.browser_fallback_url="+encodeURIComponent(play)+";end",
+d=document,$=function(i){return d.getElementById(i)};$("nf").hidden=true;$("am").hidden=false;
+d.title="Be friends in "+g.n+" — Tagongo Games";
+var ns=d.querySelectorAll("[data-juego-am]");for(var i=0;i<ns.length;i++)ns[i].textContent=g.n;
+$("am-cod").textContent=cv;$("am-play").href=play;$("am-abrir").textContent="Open in "+g.n;
+if(/Android/i.test(navigator.userAgent)){var a=$("am-abrir");a.href=intent;a.hidden=false;
+try{if(!sessionStorage.getItem("am-"+c)){sessionStorage.setItem("am-"+c,"1");location.href=intent}}catch(e){}}
+else $("am-android").hidden=false})();</script>
 </body>
 </html>
