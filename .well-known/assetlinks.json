@@ -25,5 +25,29 @@
     "27:E6:81:0B:8D:0E:C1:65:0E:FC:1C:AB:CC:0A:EB:3A:BA:5B:0E:F1:D1:B4:B7:A3:89:5B:E3:24:64:23:97:A4"
    ]
   }
+ },
+ {
+  "relation": [
+   "delegate_permission/common.handle_all_urls"
+  ],
+  "target": {
+   "namespace": "android_app",
+   "package_name": "com.tagongogames.letrifu",
+   "sha256_cert_fingerprints": [
+    "27:E6:81:0B:8D:0E:C1:65:0E:FC:1C:AB:CC:0A:EB:3A:BA:5B:0E:F1:D1:B4:B7:A3:89:5B:E3:24:64:23:97:A4"
+   ]
+  }
+ },
+ {
+  "relation": [
+   "delegate_permission/common.handle_all_urls"
+  ],
+  "target": {
+   "namespace": "android_app",
+   "package_name": "com.tagongogames.garabatix",
+   "sha256_cert_fingerprints": [
+    "27:E6:81:0B:8D:0E:C1:65:0E:FC:1C:AB:CC:0A:EB:3A:BA:5B:0E:F1:D1:B4:B7:A3:89:5B:E3:24:64:23:97:A4"
+   ]
+  }
  }
 ]
